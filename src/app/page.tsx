@@ -1,5 +1,14 @@
-import Image from 'next/image'
+"use client";
+
+import { useSession } from "next-auth/react";
+import TripSearch from "./components/TripSearch/TripSearch";
 
 export default function Home() {
-  return <h1>Home</h1>
+  const { data } = useSession();
+
+  return (
+    <div>
+      <TripSearch />
+    </div>
+  );
 }
